@@ -151,28 +151,13 @@
                     <h3>History Orders</h3>
                 </div>
                 <div class="row">
-                    <table id="history_orders">
-                        <tr>
-                            <th>ID</th>
-                            <th>status</th>
-                            <th>price</th>
-                            <th>type</th>
-                            <th>date</th>
-                        </tr>
-                        <tr>
-                            <td>12345</td>
-                            <td>finished</td>
-                            <td>5000$</td>
-                            <td>Eco room</td>
-                            <td>2024-12-15</td>
-                        </tr>
-                        <tr>
-                            <td>54321</td>
-                            <td>Waiting Check-in</td>
-                            <td>9000$</td>
-                            <td>Lux room</td>
-                            <td>2024-06-15</td>
-                        </tr>
+                    <form style="width: 100%;">
+                        <input id="search_order" type="text" placeholder="type the order ID you want to search here" style="width:100%">
+                        <!--Please add an eventlistener for searching order-->
+                    </form>
+                </div>
+                <div class="row">
+                    <table id="list_orders">
                     </table>
                 </div>
             </div>
@@ -245,11 +230,8 @@
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        var display_div=document.getElementById("display_div")
-        var orders_button = document.getElementById("orders");
-        orders_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n</table>";
-        })
+        var list_order=document.getElementById("list_orders")
+        list_order.innerHTML="<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n";
     </script>
 </body>
 
