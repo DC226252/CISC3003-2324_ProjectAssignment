@@ -41,22 +41,6 @@
         <div class="canvas-close">
             <i class="icon_close"></i>
         </div>
-        <div class="search-icon search-switch">
-            <i class="icon_search"></i>
-        </div>
-        <div class="header-configure-area">
-            <div class="language-option">
-                <img src="../images/flag.jpg" alt="">
-                <span>EN <i class="fa fa-angle-down"></i></span>
-                <div class="flag-dropdown">
-                    <ul>
-                        <li><a href="#">Zi</a></li>
-                        <li><a href="#">Fr</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a href="#" class="bk-btn">Booking Now</a>
-        </div>
         <nav class="mainmenu mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
@@ -64,25 +48,15 @@
                 <li><a href="./about-us.html">About Us</a></li>
                 <li><a href="./contact.html">Contact</a></li>
                 <li><a href="./login.html">Login</a></li>
-                <li><a href="./staff_profile.html">Profile</a></li>
+                <li><a href="./customer_profile.html">Profile</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
-        <div class="top-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-        <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> </li>
-            <li><i class="fa fa-envelope"></i> </li>
-        </ul>
     </div>
     <!-- Offcanvas Menu Section End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section header-normal">
+    <header class="header-section">     
         <div class="menu-item">
             <div class="container">
                 <div class="row">
@@ -101,8 +75,10 @@
                                     <li><a href="./rooms.html">Rooms</a></li>
                                     <li><a href="./about-us.html">About Us</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
-                                    <li><a href="./login.html">Login</a></li>
-                                    <li><a href="./staff_profile.html">Profile</a></li>
+                                    <li><a href="./login.html" id="login">Login</a></li>
+                                    <li><a href="./customer_profile.html" id="profile">Profile</a></li>
+                                    <!-- profile page please according the login info to decide href as customer_profile page -->
+                                    <!-- also, add class "hider" to hide profile option before login and hide login option after login-->
                                 </ul>
                             </nav>
                         </div>
@@ -150,7 +126,7 @@
                 <div class="row">
                     <h3>History Orders</h3>
                 </div>
-                <div>
+                <div class="row">
                     <table id="history_orders">
                         <tr>
                             <th>ID</th>
@@ -158,6 +134,20 @@
                             <th>price</th>
                             <th>type</th>
                             <th>date</th>
+                        </tr>
+                        <tr>
+                            <td>12345</td>
+                            <td>finished</td>
+                            <td>5000$</td>
+                            <td>Eco room</td>
+                            <td>2024-12-15</td>
+                        </tr>
+                        <tr>
+                            <td>54321</td>
+                            <td>Waiting Check-in</td>
+                            <td>9000$</td>
+                            <td>Lux room</td>
+                            <td>2024-06-15</td>
                         </tr>
                     </table>
                 </div>
