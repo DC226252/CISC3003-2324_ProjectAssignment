@@ -2340,3 +2340,8 @@ ul, ol {
 .hider{
 	display: none !important;
 }
+
+.row table{
+	margin-top: 20px;
+	width: 100%;
+}
