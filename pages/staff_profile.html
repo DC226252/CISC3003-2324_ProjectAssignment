@@ -28,65 +28,65 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<div id="preloder">
+    <div class="loader"></div>
+</div>
 
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="canvas-open">
-        <i class="icon_menu"></i>
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="canvas-open">
+    <i class="icon_menu"></i>
+</div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close">
+        <i class="icon_close"></i>
     </div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
-            <i class="icon_close"></i>
-        </div>
-        <nav class="mainmenu mobile-menu">
-            <ul>
-                <li class="active"><a href="./staff_home.html">Home</a></li>
-                <li><a href="./orders.html">Order</a></li>
-                <li><a href="./rooms.html">Room</a></li>
-                <li><a href="./customer.html">Customers</a></li>
-                <li><a href="./staff.html">Staffs</a></li>
-                <li><a href="./staff_profile.html">Profile</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-    <!-- Offcanvas Menu Section End -->
+    <nav class="mainmenu mobile-menu">
+        <ul>
+            <li class="active"><a href="./staff_home.html">Home</a></li>
+            <li><a href="./orders.html">Order</a></li>
+            <li><a href="./rooms_management.html">Room</a></li>
+            <li><a href="./customer_information.html">Customers</a></li>
+            <li><a href="./staff_information.html">Staffs</a></li>
+            <li><a href="./staff_profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+</div>
+<!-- Offcanvas Menu Section End -->
 
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="logo">
-                            <a href="./staff_home.html">
-                                <h3>UM Hotel</h3>
-                            </a>
-                        </div>
+<!-- Header Section Begin -->
+<header class="header-section">
+    
+    <div class="menu-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo">
+                        <a href="./staff_home.html">
+                            <h3>UM Hotel</h3>
+                        </a>
                     </div>
-                    <div class="col-lg-10">
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li class="active"><a href="./staff_home.html">Home</a></li>
-                                    <li><a href="./orders.html">Order</a></li>
-                                    <li><a href="./rooms.html">Room</a></li>
-                                    <li><a href="./customer.html">Customers</a></li>
-                                    <li><a href="./staff.html">Staffs</a></li>
-                                    <li><a href="./staff_profile.html">Profile</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="nav-menu">
+                        <nav class="mainmenu">
+                            <ul>
+                                <li class="active"><a href="./staff_home.html">Home</a></li>
+                                <li><a href="./orders.html">Order</a></li>
+                                <li><a href="./rooms_management.html">Room</a></li>
+                                <li><a href="./customer_information.html">Customers</a></li>
+                                <li><a href="./staff_information.html">Staffs</a></li>
+                                <li><a href="./staff_profile.html">Profile</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- Header End -->
+    </div>
+</header>
+<!-- Header End -->
 
     <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
@@ -114,23 +114,14 @@
                     <div class="col-lg-6">
                         <div class="ap-title">
                             <h2>My Profile</h2>
-                            <p>Name:</p>
-                            <p id="name"></p>
-                            <p>Position:</p>
-                            <p id="position"></p>
-                            <p>Contact_number:</p>
-                            <p id="contact_number"></p>
+                            <img class="avatar" src="../images/avatar.jpg">
+                            <p>Name: </p>
+                            <p id="name" style="color: black;font-weight: bold;">Mona Gana</p>
+                            <p>Position: </p>
+                            <p id="position" style="color: black;font-weight: bold;">Maneger</p>
+                            <p>Contact_number: </p>
+                            <p id="contact_number" style="color: black;font-weight: bold;">66550723</p>
                         </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <ul class="ap-services">
-                            <button id="orders">Orders</button>
-                            <button id="check-in">Check-in</button>
-                            <button id="check-out">Check-out</button>
-                            <button id="rooms">Room</button>
-                            <button id="customer">Customer</button>
-                            <button id="staff">staff</button>
-                        </ul>
                     </div>
                 </div>
                 <div class="row" id="display_div">
