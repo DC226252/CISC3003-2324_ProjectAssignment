@@ -1234,6 +1234,8 @@ ul, ol {
 	margin-bottom: 50px;
 }
 .room-details-item img {
+	width: 770px;
+	height: 440px;
 	margin-bottom: 40px;
 }
 .room-details-item .rd-text .rd-title {
