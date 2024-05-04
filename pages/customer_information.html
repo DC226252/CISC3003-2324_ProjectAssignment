@@ -120,7 +120,7 @@
                     </form>
                 </div>
                 <div class="row">
-                    <table id="list_orders">
+                    <table id="list_customers">
                     </table>
                 </div>
             </div>
@@ -149,8 +149,17 @@
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        var list_order=document.getElementById("list_orders")
-        list_order.innerHTML="<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n";
+        var list_customer=document.getElementById("list_customers")
+        const name=[];
+        const number=[];
+        name.push("Joker","Chan Hoi");
+        number.push("66442200","65432100");
+        list_customer.innerHTML="<tr>\n<th>customer_ID</th>\n<th>name</th>\n<th>contact number</th>\n</tr>\n";
+        for(let i=0;i<2;i++)
+        {
+            
+            list_customer.innerHTML=list_customer.innerHTML+"<tr>\n<td>"+i+1+"</td>\n<td>"+name[i]+"</td>\n<td>"+number[i]+"</td>\n</tr>\n"
+        }
     </script>
 </body>
 
