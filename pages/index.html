@@ -32,9 +32,31 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./rooms.html">Rooms</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./customer_profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
     <!-- Header Section Begin -->
-    <header class="header-section">
-        
+    <header class="header-section">     
         <div class="menu-item">
             <div class="container">
                 <div class="row">
@@ -53,13 +75,12 @@
                                     <li><a href="./rooms.html">Rooms</a></li>
                                     <li><a href="./about-us.html">About Us</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
-                                    <li><a href="./login.html">Login</a></li>
-                                    <li><a href="./staff_profile.html">Profile</a></li>
+                                    <li><a href="./login.html" id="login">Login</a></li>
+                                    <li><a href="./customer_profile.html" id="profile">Profile</a></li>
+                                    <!-- profile page please according the login info to decide href as customer_profile page -->
+                                    <!-- also, add class "hider" to hide profile option before login and hide login option after login-->
                                 </ul>
                             </nav>
-                            <div class="nav-right search-switch">
-                                <i class="icon_search"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,6 +88,7 @@
         </div>
     </header>
     <!-- Header End -->
+
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
