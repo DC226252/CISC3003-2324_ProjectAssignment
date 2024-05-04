@@ -220,33 +220,6 @@
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-        var display_div=document.getElementById("display_div")
-        var orders_button = document.getElementById("orders");
-        orders_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n</table>";
-        })
-        var check_in_button = document.getElementById("check-in");
-        check_in_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='check_in_order_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var check_out_button = document.getElementById("check-out");
-        check_out_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='check_out_order_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var rooms_button = document.getElementById("rooms");
-        rooms_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>room_num</th>\n<th>type</th>\n<th>location</th>\n<th>status</th></tr>\n</table>";
-        })
-        var customer_button = document.getElementById("customer");
-        customer_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='search_customer_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var staff_button = document.getElementById("staff");
-        staff_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>name</th>\n<th>position</th>\n<th>contact_number</th>\n</tr>\n</table>";
-        })
-    </script>
 </body>
 
 </html>
