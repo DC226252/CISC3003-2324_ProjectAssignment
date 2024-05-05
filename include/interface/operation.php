@@ -1,5 +1,5 @@
 <?php
-    $_ENV = parse_ini_file($_SERVER['DOCUMENT_ROOT']."/.env");
+    $_ENV = parse_ini_file(realpath("./.env"));
     $connect = new PDO($_ENV["DB_NAME"], 
         $_ENV["DB_USER_NAME"], $_ENV["DB_USER_PASS"]);
     function create_unique_id() {

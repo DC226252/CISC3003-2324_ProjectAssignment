@@ -23,6 +23,16 @@ CREATE TABLE IF NOT EXISTS `Hotel_DB`.`Room` (
     `status` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`roomID`)
 );
+CREATE TABLE IF NOT EXISTS `Hotel_DB`.`RoomType` (
+    `type` TINYINT UNSIGNED NOT NULL,
+    `format` VARCHAR(255) NOT NULL,
+    `price` DOUBLE UNSIGNED NOT NULL,
+    `size` INT UNSIGNED NOT NULL,
+    `capacity` INT UNSIGNED NOT NULL,
+    `bed` VARCHAR(255) NOT NULL,
+    `services` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`type`)
+);
 CREATE TABLE IF NOT EXISTS `Hotel_DB`.`Account` (
     `accountID` VARCHAR(64) NOT NULL,
     `customerID` VARCHAR(64) NOT NULL,

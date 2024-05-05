@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/include/interface/operation.php";
+    include realpath("./include/interface/operation.php");
     class Staff{
         public $staffID;
         public $name;
