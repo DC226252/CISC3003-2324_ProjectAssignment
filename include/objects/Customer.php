@@ -47,31 +47,38 @@
             return NULL;
         }
 
-        $validArgs = [["customerID", [PDO::PARAM_STR, 64]], 
-            ["name", [PDO::PARAM_STR, 255]], ["email", [PDO::PARAM_STR, 255]], 
-            ["contact", [PDO::PARAM_STR, 255]]];
-        $queryCondition = "";
-        $queryArgs = [];
-        foreach($validArgs as $validArg) {
-            if(isset($args[$validArg[0]])) {
-                if($queryCondition != "") $queryCondition .= " AND ";
-                $queryCondition .= $validArg[0]. " = ?";
-                array_push($queryArgs, [$args[$validArg[0]], $validArg[1]]);
+        if($args) {
+            $validArgs = [["customerID", [PDO::PARAM_STR, 64]], 
+                ["name", [PDO::PARAM_STR, 255]], ["email", [PDO::PARAM_STR, 255]], 
+                ["contact", [PDO::PARAM_STR, 255]]];
+            $queryCondition = "";
+            $queryArgs = [];
+            foreach($validArgs as $validArg) {
+                if(isset($args[$validArg[0]])) {
+                    if($queryCondition != "") $queryCondition .= " AND ";
+                    $queryCondition .= $validArg[0]. " = ?";
+                    array_push($queryArgs, [$args[$validArg[0]], $validArg[1]]);
+                }
+            }
+            if($queryCondition == "") {
+                $EXIT_STATE = "No valid args be passed!";
+                return NULL;
+            }
+
+            global $connect;
+            $query_Customer = $connect -> prepare(
+                "SELECT * FROM `Customer` WHERE ". $queryCondition);
+            foreach($queryArgs as $index => $queryArg) {
+                if(is_array($queryArg[1])) $query_Customer -> bindParam(
+                    $index, $queryArg[0], $queryArg[1][0], $queryArg[1][1]);
+                else $query_Customer -> bindParam(
+                    $index, $queryArg[0], $queryArg[1]);
             }
         }
-        if($queryCondition == "") {
-            $EXIT_STATE = "No valid args be passed!";
-            return NULL;
-        }
-
-        global $connect;
-        $query_Customer = $connect -> prepare(
-            "SELECT * FROM `Customer` WHERE ". $queryCondition);
-        foreach($queryArgs as $index => $queryArg) {
-            if(is_array($queryArg[1])) $query_Customer -> bindParam(
-                $index, $queryArg[0], $queryArg[1][0], $queryArg[1][1]);
-            else $query_Customer -> bindParam(
-                $index, $queryArg[0], $queryArg[1]);
+        else {
+            global $connect;
+            $query_Customer = $connect -> prepare(
+                "SELECT * FROM `Customer`");
         }
         if(!$query_Customer -> execute()) {
             $EXIT_STATE = "Customer query is failed!";
@@ -142,38 +149,45 @@
             return NULL;
         }
 
-        $validArgs = [["customerID", [PDO::PARAM_STR, 64]], 
-            ["name", [PDO::PARAM_STR, 255]], ["email", [PDO::PARAM_STR, 255]], 
-            ["contact", [PDO::PARAM_STR, 255]]];
-        $deleteCondition = "";
-        $deleteArgs = [];
-        foreach($validArgs as $validArg) {
-            if(isset($args[$validArg[0]])) {
-                if($deleteCondition != "") $deleteCondition .= " AND ";
-                $deleteCondition .= $validArg[0]. " = ?";
-                array_push($deleteArgs, [$args[$validArg[0]], $validArg[1]]);
+        if($args) {
+            $validArgs = [["customerID", [PDO::PARAM_STR, 64]], 
+                ["name", [PDO::PARAM_STR, 255]], ["email", [PDO::PARAM_STR, 255]], 
+                ["contact", [PDO::PARAM_STR, 255]]];
+            $deleteCondition = "";
+            $deleteArgs = [];
+            foreach($validArgs as $validArg) {
+                if(isset($args[$validArg[0]])) {
+                    if($deleteCondition != "") $deleteCondition .= " AND ";
+                    $deleteCondition .= $validArg[0]. " = ?";
+                    array_push($deleteArgs, [$args[$validArg[0]], $validArg[1]]);
+                }
+            }
+            if($deleteCondition == "") {
+                $EXIT_STATE = "No valid args be passed!";
+                return NULL;
+            }
+
+            global $connect;
+            $delete_Customer = $connect -> prepare(
+                "DELETE FROM `Customer` WHERE ". $deleteCondition);
+            foreach($deleteArgs as $index => $deleteArg) {
+                if(is_array($deleteArg[1])) $delete_Customer -> bindParam(
+                    $index, $deleteArg[0], $deleteArg[1][0], $deleteArg[1][1]);
+                else $delete_Customer -> bindParam(
+                    $index, $deleteArg[0], $deleteArg[1]);
             }
         }
-        if($deleteCondition == "") {
-            $EXIT_STATE = "No valid args be passed!";
-            return NULL;
-        }
-
-        global $connect;
-        $delete_Customer = $connect -> prepare(
-            "DELETE FROM `Customer` WHERE ". $deleteCondition);
-        foreach($deleteArgs as $index => $deleteArg) {
-            if(is_array($deleteArg[1])) $delete_Customer -> bindParam(
-                $index, $deleteArg[0], $deleteArg[1][0], $deleteArg[1][1]);
-            else $delete_Customer -> bindParam(
-                $index, $deleteArg[0], $deleteArg[1]);
+        else {
+            global $connect;
+            $delete_Customer = $connect -> prepare(
+                "DELETE FROM `Customer`");
         }
         if($delete_Customer -> execute()) {
-            $EXIT_STATE = "Customer query is success!";
+            $EXIT_STATE = "Customer delete is success!";
             return NULL;
         }
         else {
-            $EXIT_STATE = "Customer query is failed!";
+            $EXIT_STATE = "Customer delete is failed!";
             return NULL;
         }
     }
