@@ -2347,3 +2347,7 @@ ul, ol {
 	margin-top: 20px;
 	width: 100%;
 }
+
+.round {
+	border-radius: 50%;
+  }

@@ -151,7 +151,15 @@
     <script src="../js/main.js"></script>
     <script>
         var list_order=document.getElementById("list_orders")
+        const status=[];
+        const type=[];
+        status.push("finished","waiting check-in");
+        type.push("lux room","eco room");
         list_order.innerHTML="<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n";
+        for(let i=0;i<2;i++)
+        {
+            list_order.innerHTML=list_order.innerHTML+"<tr>\n<th>"+i+1+"</th>\n<th>"+i+1+"</th>\n<th>"+i+1+"</th>\n<th>"+status[i]+"</th>\n<th>"+10000+i+"</th>\n<th>"+type[i]+"</th>\n<th>"+Date.now()+"</th>\n</tr>\n"
+        }
     </script>
 </body>
 

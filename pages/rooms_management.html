@@ -7,7 +7,7 @@
     <meta name="keywords" content="Sona, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Rooms management</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
@@ -87,17 +87,16 @@
     </div>
 </header>
 <!-- Header End -->
-
     <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>Profile</h2>
+                        <h2>Rooms management</h2>
                         <div class="bt-option">
                             <a href="./staff_home.html">Home</a>
-                            <span>Profile</span>
+                            <span>Rooms management</span>
                         </div>
                     </div>
                 </div>
@@ -106,30 +105,45 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Profile Page Section Begin -->
+    <!-- Order Page Section Begin -->
     <section class="aboutus-page-section spad">
         <div class="container">
             <div class="about-page-text">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="ap-title">
-                            <h2>My Profile</h2>
-                            <img class="avatar" src="../images/avatar.jpg">
-                            <p>Name: </p>
-                            <p id="name" style="color: black;font-weight: bold;">Mona Gana</p>
-                            <p>Position: </p>
-                            <p id="position" style="color: black;font-weight: bold;">Maneger</p>
-                            <p>Contact_number: </p>
-                            <p id="contact_number" style="color: black;font-weight: bold;">66550723</p>
-                        </div>
+                    <div style="width: 50%;">
+                        <h3>Available room</h3>
+                        <table id="list_rooms">
+                            <tr>
+                                <th>Type</th>
+                                <th>Available room number</th>
+                            </tr>
+                            <tr>
+                                <td>Eco room</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Lux room</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-                <div class="row" id="display_div">
+                    <div style="width: 50%;">
+                        <form style="margin: 20px;">
+                            <input id="check-in" type="text" autocomplete="off" placeholder="type the order ID that need to check-in" style="width:80%">
+                            <input placeholder="Check-in" type="submit">
+                        <!--Please add an eventlistener for check-in-->
+                        </form>
+                        <form style="margin: 20px;">
+                            <input id="check-out" type="text" autocomplete="off" placeholder="type the order ID that need to check-out" style="width:80%">
+                            <input placeholder="Check-out" type="submit">
+                            <!--Please add an eventlistener for check-in-->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Profile Page Section End -->
+    <!-- Order Page Section End -->
 
     <!-- Search model Begin -->
     <div class="search-model">
@@ -151,33 +165,6 @@
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-        var display_div=document.getElementById("display_div")
-        var orders_button = document.getElementById("orders");
-        orders_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>customer_ID</th>\n<th>reservation_ID</th>\n<th>status</th>\n<th>price</th>\n<th>type</th>\n<th>date</th>\n</tr>\n</table>";
-        })
-        var check_in_button = document.getElementById("check-in");
-        check_in_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='check_in_order_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var check_out_button = document.getElementById("check-out");
-        check_out_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='check_out_order_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var rooms_button = document.getElementById("rooms");
-        rooms_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>room_num</th>\n<th>type</th>\n<th>location</th>\n<th>status</th></tr>\n</table>";
-        })
-        var customer_button = document.getElementById("customer");
-        customer_button.addEventListener("click",function(){
-            display_div.innerHTML="<form id='search_customer_id'><input type='text'></input><input type='submit'></input></form>";
-        })
-        var staff_button = document.getElementById("staff");
-        staff_button.addEventListener("click",function(){
-            display_div.innerHTML="<table>\n<tr>\n<th>ID</th>\n<th>name</th>\n<th>position</th>\n<th>contact_number</th>\n</tr>\n</table>";
-        })
-    </script>
 </body>
 
 </html>

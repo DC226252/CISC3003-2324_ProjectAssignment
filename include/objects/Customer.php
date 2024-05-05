@@ -1,7 +1,8 @@
 <?php
     class Customer{
-        public $id;
+        public $customerID;
         public $name;
+        public $email;
         public $contact;
     }
 ?>
