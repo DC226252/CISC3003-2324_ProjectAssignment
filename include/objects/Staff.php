@@ -1,8 +1,9 @@
 <?php
     class Staff{
-        public $id;
+        public $StaffID;
         public $name;
         public $position;
+        public $email;
         public $contact;
     }
 ?>
