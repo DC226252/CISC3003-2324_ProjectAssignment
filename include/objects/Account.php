@@ -1,9 +1,9 @@
 <?php 
     class Account{
-        public $accountID;
-        public $customerID;
-        public $username;
-        public $password;
-        public $privilege;
+        private $accountID;
+        private $customerID;
+        private $username;
+        private $password;
+        private $privilege;
     }
 ?>

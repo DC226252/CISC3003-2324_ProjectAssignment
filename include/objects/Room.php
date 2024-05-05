@@ -1,8 +1,8 @@
 <?php
     class Room{
-        public $roomID;
-        public $roomNum;
-        public $type; //should be meaning one people or two people
-        public $status;
+        private $roomID;
+        private $roomNum;
+        private $type; //should be meaning one people or two people
+        private $status;
     }
 ?>
