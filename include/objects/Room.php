@@ -1,9 +1,9 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/include/interface/operation.php";
+    include realpath("./include/interface/operation.php");
     class Room{
         public $roomID;
         public $roomNum;
-        public $type; //should be meaning one people or two people
+        public $type;
         public $status;
 
         public function __construct($attributes) {
