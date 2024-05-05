@@ -29,12 +29,15 @@
         $create_newClass -> bindParam(1, $newID, PDO::PARAM_STR, 64);
         $newClassAttr = [$newID];
         foreach($args as $index => $arg) {
-            if(is_array($arg[1]))
-                $create_newClass -> bindParam(
-                    $index + 2, $arg[0], $arg[1][0], $arg[1][1]);
-            else
-                $create_newClass -> bindParam(
-                    $index + 2, $arg[0], $arg[1]);   
+            if($arg[1] != NULL) {
+                if(is_array($arg[1]))
+                    $create_newClass -> bindParam(
+                        $index + 2, $arg[0], $arg[1][0], $arg[1][1]);
+                else
+                    $create_newClass -> bindParam(
+                        $index + 2, $arg[0], $arg[1]); 
+            }
+            else $create_newClass -> bindParam($index + 2, $arg[0]); 
             array_push($newClassAttr, $arg[0]); 
         }
         if($create_newClass -> execute()){
@@ -72,10 +75,13 @@
             $query_Class = $connect -> prepare(
                 "SELECT * FROM `". $ClassName. "` WHERE ". $queryCondition);
             foreach($queryArgs as $index => $queryArg) {
-                if(is_array($queryArg[1])) $query_Class -> bindParam(
-                    $index + 1, $queryArg[0], $queryArg[1][0], $queryArg[1][1]);
-                else $query_Class -> bindParam(
-                    $index + 1, $queryArg[0], $queryArg[1]);
+                if($queryArg[1] != NULL) {
+                    if(is_array($queryArg[1])) $query_Class -> bindParam(
+                        $index + 1, $queryArg[0], $queryArg[1][0], $queryArg[1][1]);
+                    else $query_Class -> bindParam(
+                        $index + 1, $queryArg[0], $queryArg[1]);
+                }
+                else $query_Class -> bindParam($index + 1, $queryArg[0]);
             }
         }
         else {
@@ -130,10 +136,13 @@
             "UPDATE `". $ClassName. "` SET ". $editStatement. 
             "WHERE ". $ClassIDName. " = \"". $Class -> $ClassIDName. "\"");
         foreach($editArgs as $index => $editArg) {
-            if(is_array($editArg[1])) $edit_Class -> bindParam(
-                $index + 1, $editArg[0], $editArg[1][0], $editArg[1][1]);
-            else $edit_Class -> bindParam(
-                $index + 1, $editArg[0], $editArg[1]);
+            if($editArg[1] != NULL) {
+                if(is_array($editArg[1])) $edit_Class -> bindParam(
+                    $index + 1, $editArg[0], $editArg[1][0], $editArg[1][1]);
+                else $edit_Class -> bindParam(
+                    $index + 1, $editArg[0], $editArg[1]);
+            }
+            else $edit_Class -> bindParam($index + 1, $editArg[0]);
         }
         if($edit_Class -> execute()) {
             foreach($editArgs as $editArg) $Class -> $editArg[2] = $editArg[0];
@@ -171,10 +180,13 @@
             $delete_Class = $connect -> prepare(
                 "DELETE FROM `". $ClassName. "` WHERE ". $deleteCondition);
             foreach($deleteArgs as $index => $deleteArg) {
-                if(is_array($deleteArg[1])) $delete_Class -> bindParam(
-                    $index + 1, $deleteArg[0], $deleteArg[1][0], $deleteArg[1][1]);
-                else $delete_Class -> bindParam(
-                    $index + 1, $deleteArg[0], $deleteArg[1]);
+                if($deleteArg[1] != NULL) {
+                    if(is_array($deleteArg[1])) $delete_Class -> bindParam(
+                        $index + 1, $deleteArg[0], $deleteArg[1][0], $deleteArg[1][1]);
+                    else $delete_Class -> bindParam(
+                        $index + 1, $deleteArg[0], $deleteArg[1]);
+                }
+                else $delete_Class -> bindParam($index + 1, $deleteArg[0]);
             }
         }
         else {
