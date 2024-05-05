@@ -1,6 +1,6 @@
 <?php
     class Room{
-        public $id;
+        public $roomID;
         public $roomNum;
         public $type; //should be meaning one people or two people
         public $status;
